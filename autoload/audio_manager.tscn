@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/autoload/audio_manager.gd" id="1_script"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/menu_theme.wav" id="2_music"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/hover.wav" id="3_hover"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/click.wav" id="4_click"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_script")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_music")
+
+[node name="HoverPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hover")
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_click")

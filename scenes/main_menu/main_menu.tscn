@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://1k133t6qffhl"]
+
+[ext_resource type="Script" uid="uid://ddkcmbch7tcag" path="res://scripts/main_menu.gd" id="1_script"]
+[ext_resource type="VideoStream" uid="uid://ckvxkecyfwser" path="res://assets/bg_intro.ogv" id="2_5seab"]
+[ext_resource type="Texture2D" uid="uid://ub3rsmy7gcgi" path="res://assets/textures/bg.png" id="2_bg"]
+[ext_resource type="VideoStream" uid="uid://i67t5idmv80h" path="res://assets/bg_loop.ogv" id="3_4xg86"]
+[ext_resource type="Texture2D" uid="uid://b87pmopkj2ylr" path="res://assets/textures/logo.png" id="3_logo"]
+[ext_resource type="Script" uid="uid://c4qv7u1e10uws" path="res://scenes/main_menu/background_control.gd" id="3_thkx5"]
+[ext_resource type="PackedScene" uid="uid://dodiwsp26c5s8" path="res://scenes/ui/menu_button.tscn" id="4_button"]
+[ext_resource type="Texture2D" uid="uid://bln7xdlmcp1hw" path="res://assets/icons/icon_help.svg" id="6_help"]
+[ext_resource type="Texture2D" uid="uid://dxd5mfjojd0ga" path="res://assets/icons/icon_exit.svg" id="7_exit"]
+
+[sub_resource type="Gradient" id="Gradient_shade"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.01, 0.02, 0.06, 0.6, 0.01, 0.02, 0.06, 0.22, 0.01, 0.02, 0.06, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_shade"]
+gradient = SubResource("Gradient_shade")
+
+[sub_resource type="Gradient" id="Gradient_bottom"]
+colors = PackedColorArray(0.01, 0.02, 0.06, 0, 0.01, 0.02, 0.06, 0.55)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bottom"]
+gradient = SubResource("Gradient_bottom")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thkx5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2yjq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lqpn7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qel0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrgl4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn3lk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ujhu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnpsp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1gy5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bq5lc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xac7c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0m3cs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7nm7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfctf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7xlh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xlsr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0oicw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83tid"]
+
+[node name="MainMenu" type="Control" unique_id=1346385071]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1466147501]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundControl" type="Control" parent="." unique_id=503820805]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("3_thkx5")
+
+[node name="IntroVideo" type="VideoStreamPlayer" parent="BackgroundControl" unique_id=2139552888]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_5seab")
+expand = true
+
+[node name="LoopVideo" type="VideoStreamPlayer" parent="BackgroundControl" unique_id=359760852]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("3_4xg86")
+expand = true
+
+[node name="ShadeLeft" type="TextureRect" parent="." unique_id=478632173]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_shade")
+expand_mode = 1
+
+[node name="ShadeBottom" type="TextureRect" parent="." unique_id=1901813648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_bottom")
+expand_mode = 1
+
+[node name="MenuColumn" type="VBoxContainer" parent="." unique_id=676704567]
+layout_mode = 1
+offset_left = 96.0
+offset_top = 145.0
+offset_right = 734.0
+offset_bottom = 900.0
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Logo" type="TextureRect" parent="MenuColumn" unique_id=1455699075]
+custom_minimum_size = Vector2(638, 213)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_logo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="MenuColumn" unique_id=1628916933]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MenuColumn" unique_id=702306986]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 22
+
+[node name="StartButton" parent="MenuColumn/Buttons" unique_id=1444891405 instance=ExtResource("4_button")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(520, 104)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_thkx5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_x2yjq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lqpn7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qel0l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rrgl4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dn3lk")
+subtitle = "Begin your journey across the planets"
+button_style = 0
+
+[node name="HowToPlayButton" parent="MenuColumn/Buttons" unique_id=659543717 instance=ExtResource("4_button")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4ujhu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vnpsp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a1gy5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bq5lc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xac7c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0m3cs")
+title = "HOW TO PLAY"
+subtitle = "Learn the controls and survive"
+icon_texture = ExtResource("6_help")
+
+[node name="QuitButton" parent="MenuColumn/Buttons" unique_id=2041512550 instance=ExtResource("4_button")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i7nm7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tfctf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n7xlh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0xlsr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0oicw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_83tid")
+title = "QUIT"
+subtitle = "Leave the mission"
+icon_texture = ExtResource("7_exit")
+button_style = 2
+
+[node name="VersionLabel" type="Label" parent="." unique_id=1640780993]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -62.0
+offset_right = 300.0
+offset_bottom = -38.0
+grow_vertical = 0
+text = "V1.0.0"
+
+[connection signal="finished" from="BackgroundControl/IntroVideo" to="BackgroundControl" method="_on_intro_video_finished"]

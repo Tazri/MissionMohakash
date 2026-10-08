@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/level_01.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/textures/bg.png" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/menu_button.tscn" id="3_button"]
+[ext_resource type="Texture2D" path="res://assets/icons/icon_back.svg" id="4_back"]
+
+[node name="Level01" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.55, 0.55, 0.65, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MISSION 01"
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Placeholder level - your gameplay goes here."
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/Box"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="BackButton" parent="Center/Box" instance=ExtResource("3_button")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 84)
+layout_mode = 2
+size_flags_horizontal = 4
+title = "BACK TO MENU"
+subtitle = "Press ESC or click here"
+icon_texture = ExtResource("4_back")
+button_style = 1
